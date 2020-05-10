@@ -10,7 +10,6 @@ import requests
 BaseRequest.MEMFILE_MAX = 1024 * 1024 * 1024 # Allow the request size to be 1G
 # to accomodate large section sizes
 
-print("Finished configuring logging for %s" % logging.getLogger())
 app = app()
 
 def get_last_event_from_server(upload_address, date):
@@ -54,7 +53,6 @@ if __name__ == '__main__':
       try:
         key_file = open('conf/net/keys.json')
       except:
-        logging.debug("certificates not configured, falling back to sample, default certificates")
         key_file = open('conf/net/keys.json.sample')
       key_data = json.load(key_file)
       host_cert = key_data["host_certificate"]
