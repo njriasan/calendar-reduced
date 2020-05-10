@@ -8,4 +8,4 @@ cd /usr/src/app
 source activate emission-calendar
 
 # launch the webapp
-./e-mission-py.bash pm.py
+./e-mission-py.bash find_last_event.py
