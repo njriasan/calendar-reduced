@@ -18,7 +18,7 @@ def get_last_event_from_server(upload_address, date):
             second=0, microsecond=0).isoformat()
     query = {"data.end_time": {"$lt": day_end, "$gt": day_start}}
     filters = {"_id": False}
-    sort_list = {'data.end_time': False}
+    sort_list = {'data.end_time': pymongo.DESCENDING}
     db = clsrfmt.CalendarCollection(upload_address)
     data = list(db.find(query, filters).sort(sort_list))
     if len(data) == 0:
